@@ -4,7 +4,7 @@ echo running eval of OW-DETR on M-OWODB
 
 set -x
 
-EXP_DIR=exps/OWOD/OWDETR
+EXP_DIR=exps/SOWODB/OWDETR
 PY_ARGS=${@:1}
 WANDB_NAME=PROB_V1
  

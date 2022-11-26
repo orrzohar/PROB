@@ -4,7 +4,7 @@ echo running training of prob-detr with random exemplar selection, M-OWODB datas
 
 set -x
 
-EXP_DIR=exps/OWOD/PROB_RIL
+EXP_DIR=exps/MOWODB/PROB_RIL
 PY_ARGS=${@:1}
 WANDB_NAME=RIL_PROB_V1
 

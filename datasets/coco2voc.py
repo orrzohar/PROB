@@ -54,7 +54,7 @@ def coco_to_voc_detection(coco_annotation_file, target_folder):
 if __name__ == '__main__':
     coco_train_annotation_file = 'data/coco/annotations/instances_train2017.json'
     coco_val_annotation_file = 'data/coco/annotations/instances_val2017.json'
-    target_folder = 'data/OWDETR'
+    target_folder = 'data/OWOD'
 
     coco_to_voc_detection(coco_train_annotation_file, target_folder)
     coco_to_voc_detection(coco_val_annotation_file, target_folder)

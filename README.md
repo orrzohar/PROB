@@ -1,8 +1,8 @@
 # PROB: Probabilistic Objectness for Open World Object Detection 
 
-[`Paper`]() [`Website`]()
+[`Paper`](https://arxiv.org/abs/2212.01424) 
 
-#### [Orr Zohar](https://orrzohar.github.io/), [Jackson Wang](), [Serena Yeung]()
+#### [Orr Zohar](https://orrzohar.github.io/), [Jackson Wang](https://wangkua1.github.io/), [Serena Yeung](https://marvl.stanford.edu/people.html)
 
 # Abstract
 
@@ -113,7 +113,7 @@ The splits are present inside `data/OWOD/ImageSets/` folder.
 1. Download the COCO Images and Annotations from [coco dataset](https://cocodataset.org/#download) into the `data/` directory.
 2. Unzip train2017 and val2017 folder. The current directory structure should look like:
 ```
-OW-DETR/
+PROB/
 └── data/
     └── coco/
         ├── annotations/
@@ -126,8 +126,7 @@ OW-DETR/
 7. untar the trainval 2007 and 2012 and test 2007 folders.
 8. Move all the images to `JPEGImages` folder and annotations to `Annotations` folder. 
 
-
-Currently, Dataloader and Evaluator followed for PROB is in VOC format.
+Currently, we follow the VOC format for data loading and evaluation
 
 # Training
 
@@ -135,41 +134,64 @@ Currently, Dataloader and Evaluator followed for PROB is in VOC format.
 
 To train PROB on a single node with 4 GPUS, run
 ```bash
-./run.sh
+bash ./run.sh
 ```
+
+By editing the run.sh file, you can decide to run each one of the configurations defined in ``\configs``:
+
+1. EVAL_M_OWOD_BENCHMARK.sh - evaluation of tasks 1-4 on the MOWOD Benchmark.
+2. EVAL_S_OWOD_BENCHMARK.sh - evaluation of tasks 1-4 on the SOWOD Benchmark. 
+3. M_OWOD_BENCHMARK.sh - training for tasks 1-4 on the MOWOD Benchmark.
+4. M_OWOD_BENCHMARK_RANDOM_IL.sh - training for tasks 1-4 on the MOWOD Benchmark with random exemplar selection.
+5. S_OWOD_BENCHMARK.sh - training for tasks 1-4 on the SOWOD Benchmark.
 
 #### Training on slurm cluster
 
-To train PROB on a slurm cluster having 2 nodes with 8 GPUS each, run
+To train PROB on a slurm cluster having 2 nodes with 8 GPUS each (not tested), run
 ```bash
 bash run_slurm.sh
 ```
 
-# Evaluation & Result Reproduction
-## Insta
 
-For reproducing any of the above mentioned results please run the `run_eval.sh` file and add pretrained weights accordingly.
+# Evaluation & Result Reproduction
+
+For reproducing any of the aforementioned results, please download our [pretrain weights](https://drive.google.com/uc?id=1TbSbpeWxRp1SGcp660n-35sd8F8xVBSq) and place them in the 
+'exps' directory. run the `run_eval.sh` file to utilize multiple GPUs.
+
+```
+PROB/
+└── exps/
+    ├── MOWODB/
+    |   └── PROB/ (t1.ph - t4.ph)
+    └── SOWODB/
+        └── PROB/ (t1.ph - t4.ph)
+```
 
 
 **Note:**
 For more training and evaluation details please check the [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) reposistory.
 
-# License
 
-This repository is released under the Apache 2.0 license as found in the [LICENSE](LICENSE) file.
 
 
 # Citation
 
 If you use PROB, please consider citing:
 
-    TBD
+```
+@misc{zohar2022prob,
+  author = {Zohar, Orr and Wang, Kuan-Chieh and Yeung, Serena},
+  title = {PROB: Probabilistic Objectness for Open World Object Detection},
+  publisher = {arXiv},
+  year = {2022}
+}
+```
 
 # Contact
 
-Should you have any question, please contact :e-mail: akshita.sem.iitr@gmail.com
+Should you have any question, please contact :e-mail: orrzohar@stanford.edu
 
 **Acknowledgments:**
 
-PROB builds on previous works code base such as [OW-DETR](https://github.com/akshitac8/OW-DETR), [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR), [Detreg](https://github.com/amirbar/DETReg), and [OWOD](https://github.com/JosephKJ/OWOD). If you found PROB useful please consider citing these works as well.
+PROB builds on previous works' code base such as [OW-DETR](https://github.com/akshitac8/OW-DETR), [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR), [Detreg](https://github.com/amirbar/DETReg), and [OWOD](https://github.com/JosephKJ/OWOD). If you found PROB useful please consider citing these works as well.
 

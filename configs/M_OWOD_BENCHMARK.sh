@@ -4,7 +4,7 @@ echo running training of prob-detr, M-OWODB dataset
 
 set -x
 
-EXP_DIR=exps/OWOD/PROB
+EXP_DIR=exps/MOWODB/PROB
 PY_ARGS=${@:1}
 WANDB_NAME=PROB_V1
 
