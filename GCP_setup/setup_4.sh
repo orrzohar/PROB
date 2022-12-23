@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 conda activate prob
 
 mkdir PROB/data/OWOD/JPEGImages/
