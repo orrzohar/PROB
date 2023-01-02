@@ -71,7 +71,7 @@ between distribution estimation (top right) and objectness likelihood maximizati
 
 ### Requirements
 
-We have trained and tested our models on `Ubuntu 16.04`, `CUDA 11.1`, `GCC 5.4`, `Python 3.7`
+We have trained and tested our models on `Ubuntu 16.04`, `CUDA 11.3`, `GCC 5.4`, `Python 3.10.4`
 
 ```bash
 conda env create -n prob --file env.yml
