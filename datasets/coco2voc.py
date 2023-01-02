@@ -58,4 +58,4 @@ if __name__ == '__main__':
 
     coco_to_voc_detection(coco_train_annotation_file, target_folder)
     coco_to_voc_detection(coco_val_annotation_file, target_folder)
-    imagesets(coco_train_annotation_file, coco_val_annotation_file, target_folder)
+    #imagesets(coco_train_annotation_file, coco_val_annotation_file, target_folder)
