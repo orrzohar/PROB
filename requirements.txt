@@ -1,0 +1,11 @@
+wandb==0.13.4
+einops==0.5.0
+pycocotools==2.0.5
+scikit-image==0.19.2
+joblib==1.2.0
+tqdm==4.64.1
+notebook==6.5.1
+pandas==1.5.1
+seaborn==0.12.1
+numpy==1.21.5
+ipdb==0.13.9

@@ -71,11 +71,13 @@ between distribution estimation (top right) and objectness likelihood maximizati
 
 ### Requirements
 
-We have trained and tested our models on `Ubuntu 16.04`, `CUDA 11.1`, `GCC 5.4`, `Python 3.7`
+We have trained and tested our models on `Ubuntu 16.04`, `CUDA 11.1/11.3`, `GCC 5.4.0`, `Python 3.10.4`
 
 ```bash
-conda env create -n prob --file env.yml
+conda create --name prob python==3.10.4
 conda activate prob
+pip install -r requirements.txt
+pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu113
 ```
 
 ### Backbone features
@@ -136,6 +138,7 @@ To train PROB on a single node with 4 GPUS, run
 ```bash
 bash ./run.sh
 ```
+**note: you may need to give permissions to the .sh files under the 'configs' and 'tools' directories by running `chmod +x *.sh` in each directory.
 
 By editing the run.sh file, you can decide to run each one of the configurations defined in ``\configs``:
 
@@ -151,12 +154,16 @@ To train PROB on a slurm cluster having 2 nodes with 8 GPUS each (not tested), r
 ```bash
 bash run_slurm.sh
 ```
+**note: you may need to give permissions to the .sh files under the 'configs' and 'tools' directories by running `chmod +x *.sh` in each directory.
 
 
 # Evaluation & Result Reproduction
 
 For reproducing any of the aforementioned results, please download our [pretrain weights](https://drive.google.com/uc?id=1TbSbpeWxRp1SGcp660n-35sd8F8xVBSq) and place them in the 
-'exps' directory. run the `run_eval.sh` file to utilize multiple GPUs.
+'exps' directory. Run the `run_eval.sh` file to utilize multiple GPUs.
+
+**note: you may need to give permissions to the .sh files under the 'configs' and 'tools' directories by running `chmod +x *.sh` in each directory.
+
 
 ```
 PROB/
