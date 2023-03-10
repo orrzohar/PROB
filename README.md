@@ -1,4 +1,4 @@
-# PROB: Probabilistic Objectness for Open World Object Detection 
+# PROB: Probabilistic Objectness for Open World Object Detection (CVPR 2023)
 
 [`Paper`](https://arxiv.org/abs/2212.01424) 
 
