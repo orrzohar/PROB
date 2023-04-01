@@ -292,6 +292,7 @@ class OWDetection(VisionDataset):
         w, h = map(target['annotation']['size'].get, ['width', 'height'])
         target = dict(
             image_id=torch.tensor([self.imgids[index]], dtype=torch.int64),
+            org_image_id=torch.Tensor([ord(c) for c in self.annotations[index].split('/')[-1].split('.xml')[0]]),
             labels=torch.tensor([i['category_id'] for i in instances], dtype=torch.int64),
             area=torch.tensor([i['area'] for i in instances], dtype=torch.float32),
             boxes=torch.as_tensor([i['bbox'] for i in instances], dtype=torch.float32),
