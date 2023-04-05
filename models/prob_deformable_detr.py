@@ -574,23 +574,16 @@ class ExemplarSelection(nn.Module):
             
     def calc_energy_per_image(self, outputs, targets, indices):
         out_logits, pred_obj = outputs['pred_logits'], outputs['pred_obj']
-        out_logits[:,:, self.invalid_cls_logits] = -10e10
+        out_logits[:, :, self.invalid_cls_logits] = -10e10
 
-        idx = self._get_src_permutation_idx(indices)
         torch.exp(-self.temperature*pred_obj).unsqueeze(-1)
         logit_dist = torch.exp(-self.temperature*pred_obj).unsqueeze(-1)
         prob = logit_dist*out_logits.sigmoid()
 
-        image_sorted_scores={}
+        image_sorted_scores = {}
         for i in range(len(targets)):
-            image_sorted_scores[int(targets[i]['image_id'].cpu().numpy())] = {'labels':targets[i]['labels'].cpu().numpy(),"scores": prob[i,indices[i][0],targets[i]['labels']].detach().cpu().numpy()}
+            image_sorted_scores[''.join([chr(int(c)) for c in targets[i]['org_image_id']])] = {'labels':targets[i]['labels'].cpu().numpy(),"scores": prob[i,indices[i][0],targets[i]['labels']].detach().cpu().numpy()}
         return [image_sorted_scores]
-
-    def _get_src_permutation_idx(self, indices):
-        # permute predictions following indices
-        batch_idx = torch.cat([torch.full_like(src, i) for i, (src, _) in enumerate(indices)])
-        src_idx = torch.cat([src for (src, _) in indices])
-        return batch_idx, src_idx
 
     def forward(self, samples, outputs, targets):
         outputs_without_aux = {k: v for k, v in outputs.items() if k != 'aux_outputs' and k != 'enc_outputs' and k !='pred_obj'}

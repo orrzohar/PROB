@@ -446,14 +446,8 @@ def create_ft_dataset(args, image_sorted_scores):
         for j in range(len(v['labels'])):
             label = str(v['labels'][j])
             if (v['scores'][j] <= class_threshold[label][0].numpy() or v['scores'][j] >= class_threshold[label][1].numpy()) and (len(imgs_per_class[label])<=args.num_inst_per_class+2):
-                img = str(k)[4:]
-                if len(img)==10:
-                    imgs_per_class[label].append(img[:4]+'_'+img[4:])
-                    save_imgs.append(img[:4]+'_'+img[4:])
-                else:
-                    save_imgs.append(img)
-                    imgs_per_class[label].append(img)
-
+                save_imgs.append(k)
+                imgs_per_class[label].append(k)
                         
     print(f'found {len(np.unique(save_imgs))} images in run')
     if len(args.exemplar_replay_prev_file)>0:
