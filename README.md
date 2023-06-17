@@ -1,6 +1,9 @@
 # PROB: Probabilistic Objectness for Open World Object Detection (CVPR 2023)
 
-[`Paper`](https://arxiv.org/abs/2212.01424) 
+[`Paper`](https://openaccess.thecvf.com/content/CVPR2023/html/Zohar_PROB_Probabilistic_Objectness_for_Open_World_Object_Detection_CVPR_2023_paper.html) 
+[`arXiv`](https://arxiv.org/abs/2212.01424) 
+[`website`](https://orrzohar.github.io/projects/prob/)
+[`video`](https://www.youtube.com/watch?v=prSeAoO82M4)
 
 #### [Orr Zohar](https://orrzohar.github.io/), [Jackson Wang](https://wangkua1.github.io/), [Serena Yeung](https://marvl.stanford.edu/people.html)
 
@@ -19,9 +22,9 @@ Comprehensive experiments on OWOD benchmarks show that PROB outperforms all exis
 
 
 # Overview
-PROB adapts the Deformable DETR model by adding the proposed 'probabalistic objectness' head. In training, we alterante 
+PROB adapts the Deformable DETR model by adding the proposed 'probabilistic objectness' head. In training, we alternate 
 between distribution estimation (top right) and objectness likelihood maximization of **matched ground-truth objects** 
-(top left). For interence, the objectness probability multiplies the classification probabilities. For more, see the manuscript.
+(top left). For inference, the objectness probability multiplies the classification probabilities. For more, see the manuscript.
 
 ![prob](./docs/Method.png)
 
@@ -176,29 +179,31 @@ PROB/
 
 
 **Note:**
-For more training and evaluation details please check the [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) reposistory.
+Please check the [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) repository for more training and evaluation details.
 
 
 
 
-# Citation
+# Citing
 
 If you use PROB, please consider citing:
 
-```
-@misc{zohar2022prob,
-  author = {Zohar, Orr and Wang, Kuan-Chieh and Yeung, Serena},
-  title = {PROB: Probabilistic Objectness for Open World Object Detection},
-  publisher = {arXiv},
-  year = {2022}
+```bibtex
+@InProceedings{Zohar_2023_CVPR,
+    author    = {Zohar, Orr and Wang, Kuan-Chieh and Yeung, Serena},
+    title     = {PROB: Probabilistic Objectness for Open World Object Detection},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {11444-11453}
 }
 ```
 
 # Contact
 
-Should you have any question, please contact :e-mail: orrzohar@stanford.edu
+Should you have any questions, please contact :e-mail: orrzohar@stanford.edu
 
 **Acknowledgments:**
 
-PROB builds on previous works' code base such as [OW-DETR](https://github.com/akshitac8/OW-DETR), [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR), [Detreg](https://github.com/amirbar/DETReg), and [OWOD](https://github.com/JosephKJ/OWOD). If you found PROB useful please consider citing these works as well.
+PROB builds on previous works' code bases such as [OW-DETR](https://github.com/akshitac8/OW-DETR), [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR), [Detreg](https://github.com/amirbar/DETReg), and [OWOD](https://github.com/JosephKJ/OWOD). If you found PROB useful please consider citing these works as well.
 
