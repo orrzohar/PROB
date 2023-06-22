@@ -1,6 +1,6 @@
 # PROB: Probabilistic Objectness for Open World Object Detection (CVPR 2023)
 
-[`Paper`](https://openaccess.thecvf.com/content/CVPR2023/html/Zohar_PROB_Probabilistic_Objectness_for_Open_World_Object_Detection_CVPR_2023_paper.html) 
+[`paper`](https://openaccess.thecvf.com/content/CVPR2023/html/Zohar_PROB_Probabilistic_Objectness_for_Open_World_Object_Detection_CVPR_2023_paper.html) 
 [`arXiv`](https://arxiv.org/abs/2212.01424) 
 [`website`](https://orrzohar.github.io/projects/prob/)
 [`video`](https://www.youtube.com/watch?v=prSeAoO82M4)
