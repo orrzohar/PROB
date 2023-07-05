@@ -169,7 +169,7 @@ bash run_slurm.sh
         <th align="center">Verified By</th>
     </tr>
     <tr>
-        <td align="left">2, 4, 8, 16 A100 GPUs</td>
+        <td align="left">2, 4, 8, 16 A100 (40G)</td>
         <td align="center">
             -
         </td>
