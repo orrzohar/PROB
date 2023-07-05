@@ -159,10 +159,37 @@ bash run_slurm.sh
 ```
 **note: you may need to give permissions to the .sh files under the 'configs' and 'tools' directories by running `chmod +x *.sh` in each directory.
 
+### Hyperparameters for different systems
+
+<table align="center">
+    <tr>
+        <th align="center">System</th>
+        <th align="center">Hyper Parameters</th>
+        <th align="center">Notes</th>
+        <th align="center">Verified By</th>
+    </tr>
+    <tr>
+        <td align="left">2, 4, 8, 16 A100 GPUs</td>
+        <td align="center">
+            -
+        </td>
+        <td align="center">-</td>
+        <td align="center">orrzohar</td>
+    </tr>
+    <tr>
+        <td align="left">4 Titan RTX (12G)</td>
+        <td align="center">
+            lr_drop = 40, batch_size = 2
+        </td>
+        <td align="center">class_error drops more slowly during training.</td>
+        <td align="center">https://github.com/orrzohar/PROB/issues/26</td>
+    </tr>
+</table>
+
 
 # Evaluation & Result Reproduction
 
-For reproducing any of the aforementioned results, please download our [pretrain weights](https://drive.google.com/uc?id=1TbSbpeWxRp1SGcp660n-35sd8F8xVBSq) and place them in the 
+For reproducing any of the aforementioned results, please download our [weights](https://drive.google.com/uc?id=1TbSbpeWxRp1SGcp660n-35sd8F8xVBSq) and place them in the 
 'exps' directory. Run the `run_eval.sh` file to utilize multiple GPUs.
 
 **note: you may need to give permissions to the .sh files under the 'configs' and 'tools' directories by running `chmod +x *.sh` in each directory.
