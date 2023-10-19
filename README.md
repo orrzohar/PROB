@@ -177,6 +177,14 @@ bash run_slurm.sh
         <td align="center">orrzohar</td>
     </tr>
     <tr>
+        <td align="left">2 A100 (80G)</td>
+        <td align="center">
+            lr_drop = 30
+        </td>
+        <td align="center">lower lr_drop required to sustain U-Recall</td>
+        <td align="center">https://github.com/orrzohar/PROB/issues/47</td>
+    </tr>
+    <tr>
         <td align="left">4 Titan RTX (12G)</td>
         <td align="center">
             lr_drop = 40, batch_size = 2
@@ -185,7 +193,6 @@ bash run_slurm.sh
         <td align="center">https://github.com/orrzohar/PROB/issues/26</td>
     </tr>
 </table>
-
 
 # Evaluation & Result Reproduction
 
