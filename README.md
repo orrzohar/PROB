@@ -185,7 +185,7 @@ bash run_slurm.sh
         <td align="center">https://github.com/orrzohar/PROB/issues/47</td>
     </tr>
     <tr>
-        <td align="left">4 Titan RTX (12G)</td>
+        <td align="left">4 Titan RTX (24G)</td>
         <td align="center">
             lr_drop = 40, batch_size = 2
         </td>
@@ -193,11 +193,20 @@ bash run_slurm.sh
         <td align="center">https://github.com/orrzohar/PROB/issues/26</td>
     </tr>
     <tr>
+        <td align="left">4 3090 (24G)</td>
+        <td align="center">
+            lr_drop = 35, batch_size = 2
+            lr = 1e-4, lr_drop=35, batch_size = 3
+        </td>
+        <td align="center">Performance drops to K_AP50= 58.338, U_R50=19.443.</td>
+        <td align="center">https://github.com/orrzohar/PROB/issues/48</td>
+    </tr>
+    <tr>
         <td align="left">1 2080Ti(11G)</td>
         <td align="center">
-            lr=2e-5, lr_backbone=4e-6, batch size=1, obj_temp=1.3
+            lr = 2e-5, lr_backbone = 4e-6, batch size = 1, obj_temp = 1.3
         </td>
-        <td align="center">Performance drops to K_AP50=57.9826 U_R50=19.2624</td>
+        <td align="center">Performance drops to K_AP50=57.9826 U_R50=19.2624.</td>
         <td align="center">https://github.com/orrzohar/PROB/issues/50</td>
     </tr>
 </table>
