@@ -192,6 +192,14 @@ bash run_slurm.sh
         <td align="center">class_error drops more slowly during training.</td>
         <td align="center">https://github.com/orrzohar/PROB/issues/26</td>
     </tr>
+    <tr>
+        <td align="left">1 2080Ti(11G)</td>
+        <td align="center">
+            lr=2e-5, lr_backbone=4e-6, batch size=1, obj_temp=1.3
+        </td>
+        <td align="center">Performance drops to K_AP50=57.9826 U_R50=19.2624</td>
+        <td align="center">https://github.com/orrzohar/PROB/issues/50</td>
+    </tr>
 </table>
 
 # Evaluation & Result Reproduction
