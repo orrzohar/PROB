@@ -7,28 +7,35 @@
 
 #### [Orr Zohar](https://orrzohar.github.io/), [Jackson Wang](https://wangkua1.github.io/), [Serena Yeung](https://marvl.stanford.edu/people.html)
 
-# Abstract
+<h5 align="center"> If you like our project, please give us a star ⭐ on GitHub for latest updates!  </h2>
 
-Open World Object Detection (OWOD) is a new and challenging computer vision task that bridges the gap between classic object detection (OD) benchmarks and object detection in the real world.
-In addition to detecting and classifying *seen/labeled* objects, OWOD algorithms are expected to detect *novel/unknown* objects - which can be classified and incrementally learned.
-In standard OD, object proposals not overlapping with a labeled object are automatically classified as background. Therefore, simply applying OD methods to OWOD fails as unknown objects would be predicted as background. 
-The challenge of detecting unknown objects stems from the lack of supervision in distinguishing unknown objects and background object proposals. Previous OWOD methods have attempted to overcome this issue by generating supervision using pseudo-labeling - however, unknown object detection has remained low.
-Probabilistic/generative models may provide a solution for this challenge. 
-Herein, we introduce a novel probabilistic framework for objectness estimation, where we alternate between probability distribution estimation and objectness likelihood maximization of known objects in the embedded feature space - ultimately allowing us to estimate the objectness probability of different proposals. 
-The resulting **Pr**obabilistic **Ob**jectness transformer-based open-world detector, PROB, integrates our framework into traditional object detection models, adapting them for the open-world setting.
-Comprehensive experiments on OWOD benchmarks show that PROB outperforms all existing OWOD methods in both unknown object detection (~2x unknown recall) and known object detection (~10% mAP).
+## 📰 News
+* **[2024.01.05]**  ⏭️ [Check out my new OWOD paper](https://github.com/orrzohar/FOMO), where I attempt to integrate foundation models into the OWOD objective!
+* **[2023.06.18]**  🤝 Presenting at CVPR - come check out our poster, and discuss the future of OWOD.
+* **[2023.02.27]**  🚀 PROB was accepted to CVPR 2023!
+* **[2022.12.02]**  First published on [arXiv](https://arxiv.org/abs/2212.01424).
+
+
+Certainly! Here's a more concise version of your "Highlights" section:
+
+## 🔥 Highlights
+* **Open World Object Detection (OWOD):** A new computer vision task that extends traditional object detection to include both seen and unknown objects, aligning more with real-world scenarios.
+* **Challenges with Standard OD:** Traditional methods inadequately classify unknown objects as background, failing in OWOD contexts.
+* **Novel Probabilistic Framework:** Introduces a method for estimating objectness in embedded feature space, enhancing the identification of unknown objects.
+* **PROB: A Transformer-Based Detector:** A new model that adapts existing OD models for OWOD, significantly improving unknown object detection.
+* **Superior Performance:** PROB outperforms existing OWOD methods, doubling the recall for unknown objects and increasing known object detection mAP by 10%.
 
 ![prob](./docs/overview.png)
 
 
-# Overview
+## Overview
 PROB adapts the Deformable DETR model by adding the proposed 'probabilistic objectness' head. In training, we alternate 
 between distribution estimation (top right) and objectness likelihood maximization of **matched ground-truth objects** 
 (top left). For inference, the objectness probability multiplies the classification probabilities. For more, see the manuscript.
 
 ![prob](./docs/Method.png)
 
-# Results
+## 📊 Results
 <table align="center">
     <tr>
         <th> </th>
@@ -70,9 +77,9 @@ between distribution estimation (top right) and objectness likelihood maximizati
 </table>
 
 
-# Installation
+## 🛠️ Requirements and Installation
 
-### Requirements
+### Python Environment
 
 We have trained and tested our models on `Ubuntu 16.04`, `CUDA 11.1/11.3`, `GCC 5.4.0`, `Python 3.10.4`
 
@@ -98,8 +105,8 @@ python test.py
 
 
 
-## Data Structure
-
+## Dataset Preparation
+The file structure:
 ```
 PROB/
 └── data/
@@ -111,8 +118,6 @@ PROB/
             ├── TOWOD
             └── VOC2007
 ```
-
-### Dataset Preparation
 
 The splits are present inside `data/OWOD/ImageSets/` folder.
 1. Download the COCO Images and Annotations from [coco dataset](https://cocodataset.org/#download) into the `data/` directory.
@@ -133,7 +138,7 @@ PROB/
 
 Currently, we follow the VOC format for data loading and evaluation
 
-# Training
+## 🤖 Training
 
 #### Training on single node
 
@@ -211,7 +216,7 @@ bash run_slurm.sh
     </tr>
 </table>
 
-# Evaluation & Result Reproduction
+## 📈 Evaluation 
 
 For reproducing any of the aforementioned results, please download our [weights](https://drive.google.com/uc?id=1TbSbpeWxRp1SGcp660n-35sd8F8xVBSq) and place them in the 
 'exps' directory. Run the `run_eval.sh` file to utilize multiple GPUs.
@@ -235,8 +240,7 @@ Please check the [Deformable DETR](https://github.com/fundamentalvision/Deformab
 
 
 
-# Citing
-
+## ✏️ Citation
 If you use PROB, please consider citing:
 
 ```bibtex
@@ -250,11 +254,11 @@ If you use PROB, please consider citing:
 }
 ```
 
-# Contact
-
+## 📧 Contact
 Should you have any questions, please contact :e-mail: orrzohar@stanford.edu
 
-**Acknowledgments:**
-
+## 👍 Acknowledgements
 PROB builds on previous works' code bases such as [OW-DETR](https://github.com/akshitac8/OW-DETR), [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR), [Detreg](https://github.com/amirbar/DETReg), and [OWOD](https://github.com/JosephKJ/OWOD). If you found PROB useful please consider citing these works as well.
 
+## ✨ Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=orrzohar/PROB&type=Date)](https://star-history.com/#orrzohar/PROB&Date)
